@@ -4,96 +4,327 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Picture insertion</title>
     <!--cdn link-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <!---->
+    <style>
+        .card {
+            width: 20rem;
+            margin:1rem;
+            margin-right: 0em;  
+        }
+        .ImageGridContainer {
+            display: grid;
+            grid-template-columns:auto auto auto;
+        }
+        img {
+            width: 50%;
+        }
+        .main {
+            grid-template-rows: auto auto;
+        }
+        .border{
+            border: 1rem;
+            border-radius: 1rem;
+            border-color: black;
+        }
+        .deck{
+  display: flex;
+}
+.comments-author {
+  border-radius: 50%;
+  border: 6px solid #fff;
+  margin: 5px;
+  box-shadow: 0 0 0 5px rgba(0,0,0,.2);
+}   
+.title-users-list-profile img{
+  position: relative;
+  width: 50px;
+  height: 50px;
+  top: -35px;
+  left:50px;
+  margin-top: 8px;
+  margin-bottom: -25px;
+}
+.article{
+    background: papayawhip no-repeat fixed center;
+    height: 20rem;
+    
+}
+.text{
+    font-weight: bold;
+    align-items: center;
+}
+span{
+    font-weight: bold;
+   margin-left: 2rem;
+   margin-top: 2rem;
+}
+.login{
+    display: flex;
+    float: right;
+    background-color: blue;
+    border-radius: 3px;
+    box-shadow: 3px 3px; 
+}
+.login:hover{
+    background-color: blueviolet;
+}
+.login:active{
+    box-shadow: 0 5px brown;
+    transform: translate(4px);
+}
+
+
+/*Work from carl */
+
+body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box;}
+
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+input[type=submit] {
+  background-color: #04AA6D;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+
+    </style>
 </head>
 <body>
-    
-    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#ModalLoginForm">
-        <span style="float: right;";>LOGIN</span> 
-    </button>
-    <!-- Modal HTML Markup -->
-            <div id="ModalLoginForm" class="modal fade">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h1 class="modal-title">Login</h1>
-                        </div>
-                        <div class="modal-body">
-                            <form role="form" method="POST" action="">
-                                <input type="hidden" name="_token" value="">
-                                <div class="form-group">
-                                    <label class="control-label">E-Mail Address</label>
-                                    <div>
-                                        <input type="email" class="form-control input-lg" name="email" value="">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label class="control-label">Password</label>
-                                    <div>
-                                        <input type="password" class="form-control input-lg" name="password">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <div>
-                                        <div class="checkbox">
-                                            <label>
-                                                <input type="checkbox" name="remember"> Remember Me
-                                            </label>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <div>
-                                        <button type="submit" class="btn btn-success">Login</button>
+    <style>
+body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box;}
 
-                                        <a class="btn btn-link" href="">Forgot Your Password?</a>
-                                    </div>
-                                </div>
-                            </form>
-                            <h1>Or Signup!</h1>
-                            <form role="form" method="POST" action="">
-                                <input type="hidden" name="_token" value="">
-                                <div class="form-group">
-                                    <label class="control-label">Username</label>
-                                    <div>
-                                        <input type="text" class="form-control input-lg" name="name" value="">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label class="control-label">E-Mail Address</label>
-                                    <div>
-                                        <input type="email" class="form-control input-lg" name="email" value="">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label class="control-label">Password</label>
-                                    <div>
-                                        <input type="password" class="form-control input-lg" name="password">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label class="control-label">Confirm Password</label>
-                                    <div>
-                                        <input type="password" class="form-control input-lg" name="password_confirmation">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <div>
-                                        <button type="submit" class="btn btn-success">
-                                            Register
-                                        </button>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div><!-- /.modal-content -->
-                </div><!-- /.modal-dialog -->
-            </div><!-- /.modal -->
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+input[type=submit] {
+  background-color: #04AA6D;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+</style>
+
+
+
+<header class="row py-2 border-bottom sticky-top bg-white">
+    <div class="col-10 btn-group-horizontal">
+        <div class="btn">Home</div>
+        <div class="btn">About</div>
+        <div class="btn">Gallery</div>
+        <div class="btn">Order</div>
+        <div class="btn btn-warning mx-2">Cart</div>
+    </div>
+    <div class="col-2 d-flex justify-content-end">
+        <button class="btn border-success text-success mx-lg-4" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal1">Login</button>
+    </div>
+</header>
+
+<!--login-->
+<div class="modal" id="myModal1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <h3>Contact Form</h3>
+            <div class="container">
+            <form action="/action_page.php">
+                <label for="fname">First Name</label>
+                <input type="text" id="fname" name="UserName" placeholder="Username">
+
+                <label for="lname">password</label>
+                <input type="password" >
+
+               
+                <input type="submit" value="login">
+            </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal" id="myModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <h3>Contact Form</h3>
+            <div class="container">
+            <form action="/action_page.php">
+                <label for="fname">First Name</label>
+                <input type="text" id="fname" name="firstname" placeholder="Your name..">
+
+                <label for="lname">Last Name</label>
+                <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+
+                <label for="country">Country</label>
+                <select id="country" name="country">
+                <option value="australia">Australia</option>
+                <option value="canada">Canada</option>
+                <option value="usa">USA</option>
+                <option value="Cameroon">Cameroon</option>
+                </select>
+
+                <label for="subject">Subject</label>
+                <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+
+                <input type="submit" value="Submit">
+            </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+ <!--Adding the pictures using grid.-->
+ 
+ <div class="container ">
+    <div class="card">
+        <div class="ImageGridContainer">
+            <figure class="figure">
+                <img src="images/cats.png" alt="img3"  class="figure-img img-fluid rounded"class="img-fluid" class="img-thumbnail" title="Cats are good friends, and are very clean" height="300px" width="300px"> 
+                <figcaption class="figure-caption">White cats</figcaption>
+            </figure>
+            <figure class="figure">
+                <img src="images/dogIn.jpg" alt="img2"  class="figure-img img-fluid rounded"class="img-fluid" class="img-thumbnail" title="Having doys that are so lovely is positive to growth" height="300px" width="300px">
+                <figcaption class="figure-caption">Lovely dogs</figcaption>
+            </figure>
+            <figure class="figure">
+                <img src="images/yellodog.jpg" alt="img3" class="figure-img img-fluid rounded" class="img-fluid" class="img-thumbnail" title="Doys understand humans more than humans" height="300px" width="300px">
+                <figcaption class="figure-caption">Sleeping dogs</figcaption>
+            </figure>
+        </div>
+    </div>
+</div>
+<div>
+
+  
+
+<div class="d-flex justify-content-around">
+    <table class="table text-center w-50 my-4">
+        <thead class="bg-dark text-white">
+            <tr>
+                <th>Popularity</th>
+                <th>Breed</th>
+                <th>Price</th>
+                <th>Transport fee</th>
+                <th class="text-warning">Add to Cart</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="py-3">01</td>
+                <td class="py-3">Labrador Retriever</td>
+                <td class="py-3">850 $</td>
+                <td class="py-3">5.0 %</td>
+                <td class="border"><button class="btn">+</button></td>
+            </tr>
+            <tr>
+                <td class="py-3">02</td>
+                <td class="py-3">French Bulldog</td>
+                <td class="py-3">2060 $</td>
+                <td class="py-3">4.5 %</td>
+                <td class="border"><button class="btn">+</button></td>
+            </tr>
+            <tr>
+                <td class="py-3">03</td>
+                <td class="py-3">German Sherperd</td>
+                <td class="py-3">950 $</td>
+                <td class="py-3">6.0 %</td>
+                <td class="border"><button class="btn">+</button></td>
+            </tr>
+            <tr>
+                <td class="py-3">04</td>
+                <td class="py-3">Golden Retriever</td>
+                <td class="py-3">1100 $</td>
+                <td class="py-3">4.0 %</td>
+                <td class="border"><button class="btn">+</button></td>
+            </tr>
+            <tr>
+                <td class="py-3">05</td>
+                <td class="py-3">Bulldog</td>
+                <td class="py-3">2000 $</td>
+                <td class="py-3">4.0 %</td>
+                <td class="border"><button class="btn">+</button></td>
+            </tr>
+            <tr>
+                <td class="py-3">06</td>
+                <td class="py-3">Poodie</td>
+                <td class="py-3">2100 $</td>
+                <td class="py-3">7.0 %</td>
+                <td class="border"><button class="btn">+</button></td>
+            </tr>
+            <tr>
+                <td class="py-3">07</td>
+                <td class="py-3">Beagle</td>
+                <td class="py-3">500 $</td>
+                <td class="py-3">2.0 %</td>
+                <td class="border"><button class="btn">+</button></td>
+            </tr>
+            <tr class="border-white">
+                <td ></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td class="text-primary">more...</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<footer class="fixed-bottom">
+    <button class="btn px-3 py-3 btn-primary" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">Contact Us</button>
+</footer>
+    
+    
+    
+    
+   
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     
 </body>
 </html>
+
